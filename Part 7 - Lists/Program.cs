@@ -39,10 +39,11 @@ namespace Part_7___Lists
                     while (!part1end)
                     {
                         Console.Clear();
-                        Console.WriteLine("Here is the list of numbers");
+                        Console.WriteLine("Here is the list of numbers: ");
                         for (int i = 0; i < numbers.Count; i++)
                         {
                             Console.Write(numbers[i]);
+
 
                             if (i < numbers.Count - 1)
                             {
@@ -50,7 +51,8 @@ namespace Part_7___Lists
 
                             }
                         }
-
+                        Console.WriteLine();
+                        Console.WriteLine();
                         Console.WriteLine("What would you like to do with this list (pick between 1-10)");
                         Console.WriteLine("1 - Sort the list");
                         Console.WriteLine("2 - Make a new list of random numbers");
@@ -85,7 +87,7 @@ namespace Part_7___Lists
                         {
                             Console.Write("Enter a number to remove: ");
 
-                            while (!int.TryParse(Console.ReadLine(), out removeNum) && !numbers.Contains(removeNum))
+                            while (!int.TryParse(Console.ReadLine(), out removeNum) || !numbers.Contains(removeNum))
                             {
                                 Console.WriteLine("This is invalid please try again.");
                             }
@@ -132,20 +134,74 @@ namespace Part_7___Lists
                         }
                         else if (part1choice == "6")
                         {
-                            Console.WriteLine($"The largest number is {numbers.Max()}");
+                            Console.WriteLine($"The largest number is: {numbers.Max()}");
                             Console.Write("Press any key to continue...");
                             Console.ReadKey();
                         }
                         else if (part1choice == "7")
                         {
-
+                            Console.WriteLine($"The smallest number is: {numbers.Min()}");
+                            Console.Write("Press any key to continue...");
+                            Console.ReadKey();
                         }
                         else if (part1choice == "8")
                         {
+                            int sum = 0;
 
+                            foreach (int number in numbers)
+                            {
+                                sum += number;
+                            }
+
+                            double average = (double)sum / numbers.Count;
+
+                            Console.WriteLine($"The sum of the numbers is: {sum}");
+                            Console.WriteLine($"The average of the numbers: {average:F2}");
+                            Console.Write("Press any key to continue...");
+                            Console.ReadKey();
                         }
                         else if (part1choice == "9")
                         {
+                            int largestCount = 0;
+
+                            for (int value = 10; value <= 20; value++)
+                            {
+                                int count = 0;
+
+                                foreach (int number in numbers)
+                                {
+                                    if (number == value)
+                                    {
+                                        count++;
+                                    }
+                                }
+
+                                if (count > largestCount)
+                                {
+                                    largestCount = count;
+                                }
+                            }
+                            Console.WriteLine("The most frequent value(s): ");
+
+                            for (int value = 10; value <= 20; value++)
+                            {
+                                int count = 0;
+
+                                foreach (int number in numbers)
+                                {
+                                    if (number == value)
+                                    {
+                                        count++;
+                                    }
+                                }
+
+                                if (count == largestCount)
+                                {
+                                    Console.WriteLine($"{value} appears {count} times.");
+                                }
+                            }
+                            Console.Write("Press any key to continue...");
+                            Console.ReadKey();
 
                         }
                         else if (part1choice == "10")
