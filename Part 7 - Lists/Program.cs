@@ -206,7 +206,8 @@ namespace Part_7___Lists
                         }
                         else if (part1choice == "10")
                         {
-                            end = true;
+                            Console.Clear();
+                            part1end = true;
                         }
                         else
                         {
@@ -218,6 +219,63 @@ namespace Part_7___Lists
 
                 if (choice == "2")
                 {
+                    int index;
+                    List<string> vegetables = new List<string>();
+
+                    vegetables.Add("1 - CARROT");
+                    vegetables.Add("2 – BEET");
+                    vegetables.Add("3 – CELERY");
+                    vegetables.Add("4 – RADISH");
+                    vegetables.Add("5 - CABBAGE");
+
+
+                    bool part2end = false;
+
+                    while(!part2end)
+                    {
+
+                        Console.WriteLine("Here is the list of vegetables: ");
+                        Console.WriteLine("1 - CARROT");
+                        Console.WriteLine("2 – BEET");
+                        Console.WriteLine("3 – CELERY");
+                        Console.WriteLine("4 – RADISH");
+                        Console.WriteLine("5 - CABBAGE");
+                        Console.WriteLine("");
+                        Console.WriteLine("What would you like to do with the list?");
+                        Console.WriteLine("1 – Remove a vegetable by index");
+                        Console.WriteLine("2 – Remove a vegetable by value");
+                        Console.WriteLine("3 – Search for a vegetable");
+                        Console.WriteLine("4 – Add a vegetable");
+                        Console.WriteLine("5 – Sort list");
+                        Console.WriteLine("6 – Clear the list");
+                        Console.WriteLine(": ");
+                        string part2choice = Console.ReadLine();
+
+                        if (part2choice == "1")
+                        {
+                            
+                        }
+                        else if (part2choice == "2")
+                        {
+
+                        }
+                        else if (part2choice == "3")
+                        {
+
+                        }
+                        else if (part2choice == "4")
+                        {
+
+                        }
+                        else if (part2choice == "5")
+                        {
+
+                        }
+                        else if (part2choice == "6")
+                        {
+
+                        }
+                    }
 
                 }
 
